@@ -9,10 +9,7 @@ import { Provider } from 'react-redux';
 
 const valueReducer = (state = [], action) => {
   if (action.type === "SET_VALUE") {
-    let addedValue = [
-      ...state,
-      action.payload
-    ];
+    let addedValue = action.payload
     console.log("in valueReducer", addedValue);
     return addedValue;
   }

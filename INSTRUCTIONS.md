@@ -20,7 +20,7 @@ Now that the server is running, open a new terminal tab with `cmd + t` and start
 npm run client
 ```
 
-### ADD NEW FEEDBACK
+### ADD NEW FEEDBACK DONE
 
 > NOTE: As a baseline requirement, you must use Redux to store your data across views.
 
@@ -39,13 +39,13 @@ The parts:
 
 While there is no nav bar, each part of the form should be at its own route. Clicking next should move the user to the appropriate step in the process.
 
-### Input Validation DONE
+### Input Validation
 
 Each step should only allow the user to advance to the next step if a score was provided. Be sure to tell the user in some way that a value must be provided.
 
 The `Comments` step does not need to be validated, an empty value is okay.
 
-## THE REVIEW COMPONENT
+## THE REVIEW COMPONENT DONE
 
 The last step of the process will allow the user to review their feedback. Users are not able to change their input on this step or go back for Base Mode. 
 

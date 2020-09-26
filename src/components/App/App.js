@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Route, HashRouter as Router, Link } from 'react-router-dom';
-import axios from 'axios';
+import { Route, HashRouter as Router } from 'react-router-dom';
 import './App.css';
 import Support from '../Support/Support';
 import Understanding from '../Understanding/Understanding';
 import Feeling from '../Feeling/Feeling';
 import Comments from '../Comments/Comments';
+import Review from '../Review/Review';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -33,6 +33,10 @@ class App extends Component {
 
           <Route path="/comments">
             <Comments />
+          </Route>
+
+          <Route path="/review">
+            <Review />
           </Route>
         </div>
       </Router>

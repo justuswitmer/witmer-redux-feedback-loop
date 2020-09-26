@@ -7,30 +7,22 @@ import Dropdown from 'react-bootstrap/Dropdown'
 class Understanding extends Component {
 
   state = {
-    understanding: ''
+    ...this.props.feedback
   }
 
   handleSubmit = () => {
     this.props.history.push('/support');
-    let newValue = {
-      ...this.state,
-      understanding: this.state.understanding
-    }
     this.props.dispatch({
       type: 'SET_VALUE',
-      payload: newValue
+      payload: this.state
     })
-    console.log('this is the new value', newValue);
   }
 
   handleSelect = (value) => {
-    console.log('in handleSelect', value);
-    let newValue = {
-      ...this.state,
-      understanding: value,
-    };
-    this.setState(newValue);
-    console.log('this is the new value', newValue);
+    this.setState({
+      understanding: value
+    });
+    console.log('this is the new value', value);
   }
 
   render() {
@@ -58,4 +50,8 @@ class Understanding extends Component {
   }
 }
 
-export default connect()(withRouter(Understanding));
+const mapStateToProps = (reduxStore) => ({
+  feedback: reduxStore.valueReducer
+});
+
+export default connect(mapStateToProps)(withRouter(Understanding));

@@ -1,36 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Dropdown from 'react-bootstrap/Dropdown'
 
 class Comments extends Component {
 
   state = {
-    comments: ''
+    ...this.props.feedback
   }
 
   handleSubmit = () => {
-    this.props.history.push('/');
-    let newValue = {
-      ...this.state,
-      comments: this.state.comments
-    }
+    this.props.history.push('/review');
     this.props.dispatch({
       type: 'SET_VALUE',
-      payload: newValue
+      payload: this.state
     })
-    console.log('this is the new value', newValue);
   }
 
   handleSelect = (event) => {
-    console.log('in handleSelect', event);
-    let newValue = {
-      ...this.state,
-      comments: event.target.value,
-    };
-    this.setState(newValue);
-    console.log('this is the new value', newValue);
+    this.setState({
+      comments: event.target.value
+    });
+    console.log('this is the new value', event.target.value);
   }
 
   render() {
@@ -50,4 +40,8 @@ class Comments extends Component {
   }
 }
 
-export default connect()(withRouter(Comments));
+const mapStateToProps = (reduxStore) => ({
+  feedback: reduxStore.valueReducer
+});
+
+export default connect(mapStateToProps)(withRouter(Comments));
