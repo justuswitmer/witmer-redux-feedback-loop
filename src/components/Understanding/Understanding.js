@@ -12,6 +12,15 @@ class Understanding extends Component {
 
   handleSubmit = () => {
     this.props.history.push('/support');
+    let newValue = {
+      ...this.state,
+      understanding: this.state.understanding
+    }
+    this.props.dispatch({
+      type: 'SET_VALUE',
+      payload: newValue
+    })
+    console.log('this is the new value', newValue);
   }
 
   handleSelect = (value) => {

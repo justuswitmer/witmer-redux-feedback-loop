@@ -10,15 +10,24 @@ class Comments extends Component {
     comments: ''
   }
 
-  next = () => {
+  handleSubmit = () => {
     this.props.history.push('/');
-  }
-
-  handleSelect = (value) => {
-    console.log('in handleSelect', value);
     let newValue = {
       ...this.state,
-      comments: value,
+      comments: this.state.comments
+    }
+    this.props.dispatch({
+      type: 'SET_VALUE',
+      payload: newValue
+    })
+    console.log('this is the new value', newValue);
+  }
+
+  handleSelect = (event) => {
+    console.log('in handleSelect', event);
+    let newValue = {
+      ...this.state,
+      comments: event.target.value,
     };
     this.setState(newValue);
     console.log('this is the new value', newValue);
@@ -32,9 +41,10 @@ class Comments extends Component {
           <h4>Comments?</h4>
           <input
             type='text'
+            onChange={this.handleSelect}
           />
         </div>
-        <button type="submit" onClick={this.next}>Next</button>
+        <button type="submit" onClick={this.handleSubmit}>Next</button>
       </div>
     );
   }

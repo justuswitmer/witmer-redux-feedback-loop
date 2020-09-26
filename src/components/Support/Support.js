@@ -12,6 +12,15 @@ class Support extends Component {
 
   handleSubmit = () => {
     this.props.history.push('/comments');
+    let newValue = {
+      ...this.state,
+      support: this.state.support
+    }
+    this.props.dispatch({
+      type: 'SET_VALUE',
+      payload: newValue
+    })
+    console.log('this is the newValue', newValue);
   }
 
   handleSelect = (value) => {

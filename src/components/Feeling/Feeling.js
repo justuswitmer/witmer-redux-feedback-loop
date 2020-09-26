@@ -15,13 +15,14 @@ class Feeling extends Component {
   handleSubmit = () => {
     this.props.history.push('/understanding');
     let newValue = {
-      ...this.state
+      ...this.state,
+      feeling: this.state.feeling
     }
     this.props.dispatch({
       type: 'SET_VALUE',
       payload: newValue
     })
-    console.log('this is the new value', this.state.feeling);
+    console.log('this is the newValue', newValue);
   }
 
   handleSelect = (value) => {
@@ -61,15 +62,3 @@ class Feeling extends Component {
 }
 
 export default connect()(withRouter(Feeling));
-
-
-
-{/* <h4>Feeling?</h4>
-          <select onSelect={(value) => this.handleSelect(value)} >
-            <option value='' disabled selected hidden></option>
-            <option value='5'>5</option>
-            <option value='4'>4</option>
-            <option value='3'>3</option>
-            <option value='2'>2</option>
-            <option value='1'>1</option>
-          </select> */}
