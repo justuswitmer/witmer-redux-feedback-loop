@@ -12,11 +12,16 @@ class Support extends Component {
 
 
   handleSubmit = () => {
-    this.props.history.push('/comments');
-    this.props.dispatch({
-      type: 'SET_VALUE',
-      payload: this.state
-    })
+    if (this.state.support === undefined) {
+      alert('please select a value');
+    }
+    else {
+      this.props.history.push('/comments');
+      this.props.dispatch({
+        type: 'SET_VALUE',
+        payload: this.state
+      });
+    } // end else
   }
 
   handleSelect = (value) => {

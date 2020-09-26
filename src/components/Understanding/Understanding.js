@@ -11,11 +11,16 @@ class Understanding extends Component {
   }
 
   handleSubmit = () => {
-    this.props.history.push('/support');
-    this.props.dispatch({
-      type: 'SET_VALUE',
-      payload: this.state
-    })
+    if (this.state.understanding === undefined) {
+      alert('please select a value');
+    }
+    else {
+      this.props.history.push('/support');
+      this.props.dispatch({
+        type: 'SET_VALUE',
+        payload: this.state
+      });
+    } // end else
   }
 
   handleSelect = (value) => {

@@ -13,11 +13,16 @@ class Feeling extends Component {
   }
 
   handleSubmit = () => {
-    this.props.history.push('/understanding');
-    this.props.dispatch({
-      type: 'SET_VALUE',
-      payload: this.state
-    });
+    if (this.state.feeling === undefined) {
+      alert('please select a value');
+    }
+    else {
+      this.props.history.push('/understanding');
+      this.props.dispatch({
+        type: 'SET_VALUE',
+        payload: this.state
+      });
+    }// end else
   }
 
   handleSelect = (value) => {
