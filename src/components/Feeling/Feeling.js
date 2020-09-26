@@ -14,8 +14,11 @@ class Feeling extends Component {
 
   handleSubmit = () => {
     this.props.history.push('/understanding');
+    let newValue = {
+      ...this.state
+    }
     this.props.dispatch({
-      style: 'SET_VALUE',
+      type: 'SET_VALUE',
       payload: newValue
     })
     console.log('this is the new value', this.state.feeling);

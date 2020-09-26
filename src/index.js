@@ -7,11 +7,20 @@ import registerServiceWorker from './registerServiceWorker';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
-
+const valueReducer = (state = [], action) => {
+  if (action.type === "SET_VALUE") {
+    console.log("in valueReducer", state);
+    return action.payload;
+  }
+  console.log(state);
+  return state;
+}
 
 
 const storeInstance = createStore(
-  combineReducers({}),
+  combineReducers({
+    valueReducer
+  }),
   applyMiddleware()
 );
 
