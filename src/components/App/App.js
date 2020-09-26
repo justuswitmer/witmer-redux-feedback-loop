@@ -6,6 +6,8 @@ import Support from '../Support/Support';
 import Understanding from '../Understanding/Understanding';
 import Feeling from '../Feeling/Feeling';
 import Comments from '../Comments/Comments';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 class App extends Component {
   render() {

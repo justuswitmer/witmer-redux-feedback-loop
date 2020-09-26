@@ -39,7 +39,7 @@ The parts:
 
 While there is no nav bar, each part of the form should be at its own route. Clicking next should move the user to the appropriate step in the process.
 
-### Input Validation
+### Input Validation DONE
 
 Each step should only allow the user to advance to the next step if a score was provided. Be sure to tell the user in some way that a value must be provided.
 
