@@ -17,16 +17,16 @@ class App extends Component {
             <h4><i>Don't forget it!</i></h4>
           </header>
           <br />
-          <Route path="/support">
-            <Support />
+          <Route exact path="/">
+            <Feeling />
           </Route>
 
           <Route path="/understanding">
             <Understanding />
           </Route>
 
-          <Route path="/feeling">
-            <Feeling />
+          <Route path="/support">
+            <Support />
           </Route>
 
           <Route path="/comments">
