@@ -3,8 +3,20 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown'
-import Button from '@material-ui/core/Button';
-import './Feeling.css'
+import { Button, Paper } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    '& > *': {
+      margin: theme.spacing(1),
+      width: theme.spacing(16),
+      height: theme.spacing(16),
+    },
+  },
+}));
 
 
 class Feeling extends Component {
@@ -35,7 +47,10 @@ class Feeling extends Component {
 
   render() {
     return (
-      <div>
+      <Paper
+        id="paper"
+        elevation={3}
+      >
         <h1>How are you feeling today?</h1>
 
         <div className='selectField'>
@@ -60,7 +75,7 @@ class Feeling extends Component {
           onClick={this.handleSubmit}
         >Next
         </Button>
-      </div>
+      </Paper>
     );
   }
 }

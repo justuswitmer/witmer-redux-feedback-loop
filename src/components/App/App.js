@@ -6,6 +6,7 @@ import Understanding from '../Understanding/Understanding';
 import Feeling from '../Feeling/Feeling';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
+import Thanks from '../Thanks/Thanks';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
@@ -38,6 +39,10 @@ class App extends Component {
 
           <Route path="/review">
             <Review />
+          </Route>
+
+          <Route path="/thanks">
+            <Thanks />
           </Route>
         </div>
       </Router>

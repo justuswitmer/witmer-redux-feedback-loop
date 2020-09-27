@@ -1,7 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import Button from '@material-ui/core/Button';
+import { Button, Paper } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    '& > *': {
+      margin: theme.spacing(1),
+      width: theme.spacing(16),
+      height: theme.spacing(16),
+    },
+  },
+}));
 
 class Comments extends Component {
 
@@ -32,7 +45,10 @@ class Comments extends Component {
 
   render() {
     return (
-      <div>
+      <Paper
+        id="paper"
+        elevation={3}
+      >
         <h1>Any comments you want to leave?</h1>
         <div className='inputField'>
           <h4>Comments?</h4>
@@ -55,7 +71,7 @@ class Comments extends Component {
           onClick={this.handleSubmit}
         >Next
         </Button>
-      </div>
+      </Paper>
     );
   }
 }

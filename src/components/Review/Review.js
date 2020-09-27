@@ -2,7 +2,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
-import Button from '@material-ui/core/Button';
+import { Button, Paper } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    '& > *': {
+      margin: theme.spacing(1),
+      width: theme.spacing(16),
+      height: theme.spacing(16),
+    },
+  },
+}));
 
 class Review extends Component {
 
@@ -18,6 +31,7 @@ class Review extends Component {
       }).catch(err => {
         console.log('error posting to database', err);
       });
+    this.props.history.push('/thanks');
   };
 
   goBack = () => {
@@ -28,13 +42,22 @@ class Review extends Component {
 
   render() {
     return (
-      <div>
+      <Paper
+        id="paper"
+        elevation={3}
+      >
         <h1>Review Your Feedback</h1>
         <p>Feelings: {this.props.feedback.feeling}</p>
         <p>Understanding: {this.props.feedback.understanding} </p>
         <p>Support: {this.props.feedback.support} </p>
         <p>Comments: {this.props.feedback.comments} </p>
-        <button type="submit" onClick={this.goBack}>Back</button>
+        <Button
+          id="formatBtn"
+          variant="contained"
+          color="primary"
+          onClick={this.goBack}
+        >Back
+        </Button>
         <Button
           id="formatBtn"
           variant="contained"
@@ -42,7 +65,7 @@ class Review extends Component {
           onClick={() => this.postFeedback(this.props.feedback)}
         >Submit Feedback
         </Button>
-      </div>
+      </Paper>
     )
   }
 }
