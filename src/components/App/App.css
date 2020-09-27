@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-
 }
 
 .App-header {
@@ -46,3 +45,14 @@ h4 {
 margin-bottom: 5px;
 }
 
+#formatBtn {
+  margin: 10px;
+}
+
+#dropdown-menu-align-right {
+  margin-bottom: 5px
+}
+
+p {
+  font-size: 20px;
+}

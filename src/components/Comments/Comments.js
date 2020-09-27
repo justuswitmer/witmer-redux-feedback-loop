@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 class Comments extends Component {
 
@@ -40,8 +41,20 @@ class Comments extends Component {
             onChange={this.handleSelect}
           />
         </div>
-        <button type="submit" onClick={this.goBack}>Back</button>
-        <button type="submit" onClick={this.handleSubmit}>Next</button>
+        <Button
+          id="formatBtn"
+          variant="contained"
+          color="primary"
+          onClick={this.goBack}
+        >Back
+        </Button>
+        <Button
+          id="formatBtn"
+          variant="contained"
+          color="primary"
+          onClick={this.handleSubmit}
+        >Next
+        </Button>
       </div>
     );
   }

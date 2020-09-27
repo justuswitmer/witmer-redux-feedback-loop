@@ -64,7 +64,7 @@ When the submit button is clicked, save the submission in the database. The user
 
 > NOTE: These stretch goals are intended to be completed in order.
 
-### UPDATE SCORES
+### UPDATE SCORES DONE
 
 Allow the user to go back to a previous step and change their score. You still need to disallow empty values!
 

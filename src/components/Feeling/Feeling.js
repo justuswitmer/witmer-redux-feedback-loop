@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown'
-
+import Button from '@material-ui/core/Button';
+import './Feeling.css'
 
 
 class Feeling extends Component {
@@ -52,7 +53,13 @@ class Feeling extends Component {
           </DropdownButton>
           <p>You Selected: {this.state.feeling}</p>
         </div>
-        <button type="submit" onClick={this.handleSubmit}>Next</button>
+        <Button
+          id="formatBtn"
+          variant="contained"
+          color="primary"
+          onClick={this.handleSubmit}
+        >Next
+        </Button>
       </div>
     );
   }

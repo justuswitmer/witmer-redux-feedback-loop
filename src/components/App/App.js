@@ -8,8 +8,8 @@ import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 class App extends Component {
+
   render() {
     return (
       <Router>
@@ -19,6 +19,7 @@ class App extends Component {
             <h4><i>Don't forget it!</i></h4>
           </header>
           <br />
+
           <Route exact path="/">
             <Feeling />
           </Route>

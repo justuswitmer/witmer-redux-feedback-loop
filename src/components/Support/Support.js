@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown'
+import Button from '@material-ui/core/Button';
 
 class Support extends Component {
 
@@ -55,8 +56,20 @@ class Support extends Component {
           </DropdownButton>
           <p>You Selected: {this.state.support}</p>
         </div>
-        <button type="submit" onClick={this.goBack}>Back</button>
-        <button type="submit" onClick={this.handleSubmit}>Next</button>
+        <Button
+          id="formatBtn"
+          variant="contained"
+          color="primary"
+          onClick={this.goBack}
+        >Back
+        </Button>
+        <Button
+          id="formatBtn"
+          variant="contained"
+          color="primary"
+          onClick={this.handleSubmit}
+        >Next
+        </Button>
       </div>
     );
   }
