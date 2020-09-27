@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
+import logger from 'redux-logger';
 
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
@@ -16,14 +17,12 @@ const valueReducer = (state = [], action) => {
   return state;
 }
 
-
 const storeInstance = createStore(
   combineReducers({
     valueReducer
   }),
-  applyMiddleware()
+  applyMiddleware(logger)
 );
-
 
 ReactDOM.render(
   <Provider store={storeInstance}>

@@ -24,6 +24,11 @@ class Support extends Component {
     } // end else
   }
 
+  goBack = () => {
+    console.log('in goBack');
+    this.props.history.push('/understanding');
+  }
+
   handleSelect = (value) => {
     this.setState({
       support: value
@@ -50,6 +55,7 @@ class Support extends Component {
           </DropdownButton>
           <p>You Selected: {this.state.support}</p>
         </div>
+        <button type="submit" onClick={this.goBack}>Back</button>
         <button type="submit" onClick={this.handleSubmit}>Next</button>
       </div>
     );

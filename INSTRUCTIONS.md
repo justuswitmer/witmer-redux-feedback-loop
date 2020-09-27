@@ -51,7 +51,7 @@ The last step of the process will allow the user to review their feedback. Users
 
 ![comments](wireframes/review-active.png)
 
-## SUBMIT THE FEEDBACK 
+## SUBMIT THE FEEDBACK DONE
 
 The `Review` step needs to have a submit button which will be clicked on to actually submit the completed feedback to the server.
 

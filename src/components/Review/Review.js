@@ -19,6 +19,11 @@ class Review extends Component {
       });
   };
 
+  goBack = () => {
+    console.log('in goBack');
+    this.props.history.push('/comments');
+  }
+
 
   render() {
     return (
@@ -28,6 +33,7 @@ class Review extends Component {
         <p>Understanding: {this.props.feedback.understanding} </p>
         <p>Support: {this.props.feedback.support} </p>
         <p>Comments: {this.props.feedback.comments} </p>
+        <button type="submit" onClick={this.goBack}>Back</button>
         <button onClick={() => this.postFeedback(this.props.feedback)}>SUBMIT</button>
       </div>
     )

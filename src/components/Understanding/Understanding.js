@@ -30,6 +30,11 @@ class Understanding extends Component {
     console.log('this is the new value', value);
   }
 
+  goBack = () => {
+    console.log('in goBack');
+    this.props.history.push('/');
+  }
+
   render() {
     return (
       <div>
@@ -49,6 +54,7 @@ class Understanding extends Component {
           </DropdownButton>
           <p>You Selected: {this.state.understanding}</p>
         </div>
+        <button type="submit" onClick={this.goBack}>Back</button>
         <button type="submit" onClick={this.handleSubmit}>Next</button>
       </div>
     );
