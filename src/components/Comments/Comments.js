@@ -2,19 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { Button, Paper } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    '& > *': {
-      margin: theme.spacing(1),
-      width: theme.spacing(16),
-      height: theme.spacing(16),
-    },
-  },
-}));
 
 class Comments extends Component {
 
@@ -34,7 +21,6 @@ class Comments extends Component {
     console.log('in goBack');
     this.props.history.push('/support');
   }
-
 
   handleSelect = (event) => {
     this.setState({
