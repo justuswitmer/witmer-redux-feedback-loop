@@ -18,12 +18,25 @@ feedback.post('/', (req, res) => {
 
 feedback.get('/', (req, res) => {
   console.log('GET /feedback');
-  pool.query('SELECT * from "feedback";').then((result) => {
+  pool.query('SELECT * from "feedback" ORDER BY "id" DESC;').then((result) => {
     res.send(result.rows);
   }).catch((error) => {
     console.log('Error GET /feedback', error)
     res.sendStatus(500);
   });
 })
+
+feedback.delete('/:id', (req, res) => {
+  let id = req.params.id;
+  console.log(`in router deleting id: ${id}`);
+  let queryString = `DELETE FROM "feedback" WHERE "id" = $1;`;
+  pool.query(queryString, [id])
+    .then(result => {
+      res.sendStatus(201);
+    }).catch(err => {
+      console.log(err);
+      res.sendStatus(500);
+    }); // end catch
+}); // end tasksRouter DELETE
 
 module.exports = feedback;

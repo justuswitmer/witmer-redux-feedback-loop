@@ -35,6 +35,20 @@ class App extends Component {
       });
   }
 
+  deleteFeedback = (feedbackId) => {
+    console.log('this is the id to delete', feedbackId);
+    axios({
+      method: 'DELETE',
+      url: `/feedback/${feedbackId}`,
+    }).then(response => {
+      console.log('response from delete', response);
+      this.getFeedback();
+    }).catch(err => {
+      console.log('we have an error', err);
+      alert('error in deleting task', err);
+    }); // end axios
+  } // end deleteFeedback
+
   render() {
     return (
       <Router>
@@ -70,7 +84,9 @@ class App extends Component {
           </Route>
 
           <Route path="/admin">
-            <Admin />
+            <Admin
+              deleteFeedback={this.deleteFeedback}
+            />
           </Route>
         </div>
       </Router>

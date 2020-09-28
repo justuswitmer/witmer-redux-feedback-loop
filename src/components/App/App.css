@@ -58,12 +58,11 @@ p {
 }
 
 #paper {
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 50px;
 }
 
-#thanks {
-  margin-left: 20%;
-  margin-right: 20%;
-  padding: 50px
+#h4thanks {
+  padding: 100px 0;
 }
