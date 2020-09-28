@@ -28,10 +28,11 @@ input {
   margin-top: -5px;
 }
 
-.inputField {
+.commentsDiv {
+  display: block;
+  justify-content: space-evenly;
   text-align: left;
-  margin-left: 40%;
-  margin-right: 40%;
+  margin: inherit;
   margin-bottom: 10px;
 }
 
@@ -66,3 +67,11 @@ p {
 #h4thanks {
   padding: 100px 0;
 }
+
+.commentsText, .commentsButtons{
+  display: flex;
+  justify-content: center;
+}
+
+
+
