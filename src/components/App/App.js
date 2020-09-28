@@ -11,6 +11,7 @@ import Thanks from '../Thanks/Thanks';
 import Admin from '../Admin/Admin';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
+import swal from '@sweetalert/with-react'
 
 class App extends Component {
 
@@ -36,17 +37,33 @@ class App extends Component {
   }
 
   deleteFeedback = (feedbackId) => {
-    console.log('this is the id to delete', feedbackId);
-    axios({
-      method: 'DELETE',
-      url: `/feedback/${feedbackId}`,
-    }).then(response => {
-      console.log('response from delete', response);
-      this.getFeedback();
-    }).catch(err => {
-      console.log('we have an error', err);
-      alert('error in deleting task', err);
-    }); // end axios
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this feedback!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        swal("Feedback has been deleted.", {
+          icon: "success",
+        });
+        console.log('deleting task id:', feedbackId);
+        console.log('this is the id to delete', feedbackId);
+        axios({
+          method: 'DELETE',
+          url: `/feedback/${feedbackId}`,
+        }).then(response => {
+          console.log('response from delete', response);
+          this.getFeedback();
+        }).catch(err => {
+          console.log('we have an error', err);
+          alert('error in deleting task', err);
+        }); // end axios
+      } else {
+        swal("Feedback was not deleted.");
+      }
+    }); // end swal 
   } // end deleteFeedback
 
   render() {

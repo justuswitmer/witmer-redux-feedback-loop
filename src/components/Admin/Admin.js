@@ -3,9 +3,8 @@ import { connect } from 'react-redux';
 import { Button, Paper } from '@material-ui/core';
 import './Admin.css';
 
+
 class Admin extends Component {
-
-
 
   render() {
     return (
@@ -40,6 +39,7 @@ class Admin extends Component {
                     onClick={() => this.props.deleteFeedback(feedback.id)}
                   >Delete
                 </Button>
+
                 </td>
               </tr>
             )}
@@ -55,33 +55,3 @@ const mapStateToProps = (reduxState) => ({
 })
 
 export default connect(mapStateToProps)(Admin);
-
-
-
-// deleteFeedback = (feedbackId) => {
-//   swal({
-//     title: "Are you sure?",
-//     text: "Once deleted, you will not be able to recover this feedback!",
-//     icon: "warning",
-//     buttons: true,
-//     dangerMode: true,
-//   }).then((willDelete) => {
-//     if (willDelete) {
-//       swal("Feedback has been deleted.", {
-//         icon: "success",
-//       });
-//       console.log('deleting task id:', feedbackId);
-//       axios({
-//         type: 'DELETE',
-//         url: `/feedback/${feedbackId}`,
-//       }).then(response => {
-//         console.log('response from delete', response);
-//       }).catch(err => {
-//         console.log('we have an error', err);
-//         alert('error in deleting task', err);
-//       }); // end ajax
-//     } else {
-//       swal("Your imaginary file is safe!");
-//     }
-//   }); // end swal 
-// } // end deleteTask
