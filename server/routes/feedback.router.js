@@ -16,4 +16,14 @@ feedback.post('/', (req, res) => {
     }); // end catch
 }); // end feedbackRouter POST
 
+feedback.get('/', (req, res) => {
+  console.log('GET /feedback');
+  pool.query('SELECT * from "feedback";').then((result) => {
+    res.send(result.rows);
+  }).catch((error) => {
+    console.log('Error GET /feedback', error)
+    res.sendStatus(500);
+  });
+})
+
 module.exports = feedback;

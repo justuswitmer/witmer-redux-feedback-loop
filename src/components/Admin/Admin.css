@@ -1,0 +1,29 @@
+#paper {
+background-color: #faf3dd;
+padding-bottom: 20px;
+}
+
+table  {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #0b0b3b;
+  border-collapse: collapse;
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+th {
+  padding: 0 10px;
+  background-color: #ffa69e;
+}
+
+tr:nth-child(even) {
+  background-color: #b8f2e6;
+}
+
+tr:nth-child(odd) {
+  background-color: #aed9e0;
+}
+
+

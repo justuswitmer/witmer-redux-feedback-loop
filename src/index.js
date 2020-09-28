@@ -17,9 +17,19 @@ const valueReducer = (state = [], action) => {
   return state;
 }
 
+const feedbackReducer = (state = [], action) => {
+  if (action.type === "GET_FEEDBACK") {
+    let getFeedback = action.payload
+    console.log("in valueReducer", getFeedback);
+    return getFeedback;
+  }
+  return state;
+}
+
 const storeInstance = createStore(
   combineReducers({
-    valueReducer
+    valueReducer,
+    feedbackReducer
   }),
   applyMiddleware(logger)
 );
