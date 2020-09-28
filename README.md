@@ -12,6 +12,7 @@ In building this app, I practiced skills for full stack integration, connecting 
 ![screenshot](./wireframes/Comments.png)
 ![screenshot](./wireframes/Review.png)
 ![screenshot](./wireframes/Thanks.png)
+![screenshot](./wireframes/Admin.png)
 
 
 ## Prerequisites 
@@ -32,3 +33,6 @@ To run this application:
 ## Usage
 Answer a question and then click next to proceed to the next page.
 Click back to change a previous answer
+
+To access the admin side, type in `/admin` to the url.
+There you can view feedback, flag it for review, or delete feedback.
