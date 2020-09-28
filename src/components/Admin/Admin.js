@@ -19,7 +19,8 @@ class Admin extends Component {
               <th>Feeling</th>
               <th>Understanding</th>
               <th>Support</th>
-              <th id="comments">Comments</th>
+              <th>Comments</th>
+              <th>Review</th>
               <th>Delete</th>
             </tr>
           </thead>
@@ -31,6 +32,12 @@ class Admin extends Component {
                 <td>{feedback.understanding}</td>
                 <td>{feedback.support}</td>
                 <td>{feedback.comments}</td>
+                <td>
+                  <input
+                    type="checkbox"
+                    onClick={() => this.props.reviewFeedback(feedback.id)}
+                  />
+                </td>
                 <td>
                   <Button
                     id="formatBtn"

@@ -71,7 +71,7 @@ Allow the user to go back to a previous step and change their score. You still n
 ### STYLING DONE
 Improve the styling of the app using Material-UI. This might inclued cards, snackbars, buttons, a nav bar, icons, and/or a theme. 
 
-### ADMIN SECTION
+### ADMIN SECTION DONE
 
 - Display all of the existing feedback at the route `/admin`. The most recently added feedback should appear at the top of the list. Allow the user to delete existing feedback. Prompt the user to confirm prior to deleting the feedback from the database.
 

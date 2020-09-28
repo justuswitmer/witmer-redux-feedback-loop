@@ -39,4 +39,17 @@ feedback.delete('/:id', (req, res) => {
     }); // end catch
 }); // end tasksRouter DELETE
 
+feedback.put('/:id', (req, res) => {
+  let id = req.params.id;
+  console.log(`in router updating id: ${id}`);
+  let queryString = `UPDATE "feedback" SET "flagged" = NOT "flagged" WHERE "id" = $1;`;
+  pool.query(queryString, [id])
+    .then(result => {
+      res.sendStatus(201);
+    }).catch(err => {
+      console.log(err);
+      res.sendStatus(500);
+    }); // end catch
+}); // end tasksRouter DELETE
+
 module.exports = feedback;

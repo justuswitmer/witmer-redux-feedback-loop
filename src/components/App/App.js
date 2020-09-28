@@ -58,13 +58,26 @@ class App extends Component {
           this.getFeedback();
         }).catch(err => {
           console.log('we have an error', err);
-          alert('error in deleting task', err);
+          alert('error in deleting feedback', err);
         }); // end axios
       } else {
         swal("Feedback was not deleted.");
       }
     }); // end swal 
   } // end deleteFeedback
+
+  reviewFeedback = (feedbackId) => {
+    axios({
+      method: 'PUT',
+      url: `/feedback/${feedbackId}`,
+    }).then(response => {
+      console.log('response from delete', response);
+      this.getFeedback();
+    }).catch(err => {
+      console.log('we have an error', err);
+      alert('error in flagging feedback', err);
+    }); // end axios
+  } // end reviewFeedback
 
   render() {
     return (
@@ -103,6 +116,7 @@ class App extends Component {
           <Route path="/admin">
             <Admin
               deleteFeedback={this.deleteFeedback}
+              reviewFeedback={this.reviewFeedback}
             />
           </Route>
         </div>
